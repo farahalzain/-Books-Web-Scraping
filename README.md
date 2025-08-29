@@ -39,7 +39,7 @@ It uses Python with `requests` and supports environment variables (`.env`) for A
 
 ---
 
-## ▶️ Usage
+## Usage
 
 Run the script:
 
@@ -81,9 +81,3 @@ news-api-project/
 │── .env           # Store API key (not shared publicly)
 │── README.md      # Project documentation
 ```
-
----
-
-
-تحبي أكتبلك نسخة ثانية من الكود جاهزة فيها **`main()` function** ومهيكلة عشان يتطابق مع الريدمي؟
-
