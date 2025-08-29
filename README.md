@@ -1,51 +1,57 @@
-# News API Project
+# Book Scraping Project
 
-This project allows you to fetch **top news headlines** from [NewsAPI](https://newsapi.org/) based on **keywords** and **countries**.
-It uses Python with `requests` and supports environment variables (`.env`) for API key security.
+## Overview
+
+This project scrapes book data from [Books to Scrape](https://books.toscrape.com) and displays it in an interactive **Streamlit dashboard**.
+
+You can extract details such as:
+
+* Book Name
+* Price (£)
+* Rating (1-5)
+* Availability (In stock)
+
+It allows users to:
+
+* Select a book category from a sidebar
+* View a table of books in that category
+* Download the data as CSV
+* See basic statistics (total books, average price)
+* Visualize rating distribution
 
 ---
 
 ## Features
 
-* Fetch top headlines by **keyword** (e.g., `AI`, `sports`, `economy`).
-* Fetch top headlines by **country** (e.g., `us`, `gb`, `in`).
-* Fetch headlines by **keyword + country** together.
-* Secure API key management using `.env` file.
+* Web scraping using `requests` and `BeautifulSoup`
+* Data handling with `pandas`
+* Interactive dashboard with `Streamlit`
+* Automatic handling of multiple pages per category
+* CSV download for each category
+* Plotting ratings distribution with `matplotlib`
 
----
-  Get your API key from [https://newsapi.org/](https://newsapi.org/).
----
 
 ## Usage
-
-Run the script:
+## Run the Streamlit dashboard
 
 ```bash
-python main.py
+streamlit run app.py
 ```
 
-Example interaction:
+* The dashboard will open in your browser
+* Select a category from the sidebar to view books
+* Download the data as CSV or view statistics and charts
 
-```
-API key loaded successfully.
-Enter a keyword (e.g., AI, sports, economy): ai
-******* Headline 1 *******
-Source:
-	ID: None
-	Name: BBC News
-Title: AI is transforming technology
-Author: John Smith
-URL: https://www.bbc.com/news/ai-article
+### Example Python usage
 
-********************************
-Enter a country (e.g., us, gb, in): us
-******* Headline 1 *******
-Source:
-	ID: cnn
-	Name: CNN
-Title: US election and AI debates
-Author: Jane Doe
-URL: https://www.cnn.com/politics/article
+```python
+from book_scraping import book_scraping, get_categories
+
+categories = list(get_categories().keys())
+print("Available categories:", categories)
+
+books_df = book_scraping("Science")  # Replace with your chosen category
+print(books_df.head())
 ```
 
 ---
@@ -53,8 +59,8 @@ URL: https://www.cnn.com/politics/article
 ## Project Structure
 
 ```
-news-api-project/
-│── main.py        # Main script
-│── .env           # Store API key (not shared publicly)
-│── README.md      # Project documentation
+book-scraping/
+│── book_scraping.py       # Web scraping logic
+│── app.py                 # Streamlit dashboard
 ```
+---
