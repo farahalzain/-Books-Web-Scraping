@@ -13,30 +13,7 @@ It uses Python with `requests` and supports environment variables (`.env`) for A
 * Secure API key management using `.env` file.
 
 ---
-
-## Installation
-
-1. Clone this repository:
-
-   ```bash
-   git clone https://github.com/yourusername/news-api-project.git
-   cd news-api-project
-   ```
-
-2. Install required dependencies:
-
-   ```bash
-   pip install requests python-dotenv
-   ```
-
-3. Create a `.env` file in the root directory and add your **API key**:
-
-   ```
-   API_KEY=your_api_key_here
-   ```
-
   Get your API key from [https://newsapi.org/](https://newsapi.org/).
-
 ---
 
 ## Usage
